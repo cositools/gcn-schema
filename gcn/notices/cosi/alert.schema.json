@@ -1,0 +1,43 @@
+{
+  "$id": "https://gcn.nasa.gov/schema/main/gcn/notices/cosi/alert.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "COSI Transient Alert",
+  "description": "Single-stream COSI transient alerts. COSI triggers onboard via its BGO shields; roughly half of gamma-ray bursts additionally produce significant germanium-detector (Compton-mode) signal, enabling fine localization, spectroscopy, and polarization. This schema also accepts transients identified only in ground analysis (with no onboard trigger), reported with alert_tense 'archival'. The transient class is reported via the required classification field so that one stream serves GRBs and other gamma-ray transients. Recommended classification keys (mutually exclusive, probabilities sum to 1): 'GRB', 'SGR', 'Solar', 'TGF', 'Local Particles', 'Uncertain', 'Noise'. A retraction reports its revised classification, typically dominated by 'Noise' or 'Uncertain'. Localization: healpix_url is the authoritative localization for every notice; ra/dec give the maximum-a-posteriori point of that map; ra_dec_error should be populated only when a circle (scalar) or ellipse (array) is a faithful summary of the contour, which is frequently NOT the case for Compton-derived regions (annulus/arc shapes) - consumers should use the HEALPix map for follow-up planning.",
+  "type": "object",
+  "unevaluatedProperties": false,
+  "allOf": [
+    { "$ref": "../core/AdditionalInfo.schema.json" },
+    { "$ref": "../core/Alert.schema.json" },
+    { "$ref": "../core/DateTime.schema.json" },
+    { "$ref": "../core/Event.schema.json" },
+    { "$ref": "../core/FollowUp.schema.json" },
+    { "$ref": "../core/Localization.schema.json" },
+    { "$ref": "../core/Reporter.schema.json" },
+    { "$ref": "../core/Statistics.schema.json" },
+    { "$ref": "../core/Duration.schema.json" },
+    { "$ref": "../core/Spectral.schema.json" }
+  ],
+  "required": ["classification"],
+  "properties": {
+    "$schema": { "type": "string", "format": "uri" },
+    "ged_snr": {
+      "type": "number",
+      "description": "Signal-to-noise of the germanium-detector (Compton-mode) signal. Present only when significant GeD signal exists. Its presence is the indicator that Compton-derived products (fine localization, Spectral, polarization assessment) are available or forthcoming; its absence means COSI has only shield-derived information for this event."
+    },
+    "triggered_shields": {
+      "type": "array",
+      "items": { "type": "boolean" },
+      "minItems": 6,
+      "maxItems": 6,
+      "description": "Trigger status of the 6 effective BGO shields; true if the shield contributed to the onboard trigger. Absent for transients identified only in ground analysis (no onboard trigger)."
+    },
+    "prob_short": {
+      "type": "number",
+      "description": "Preliminary probability [dimensionless, 0-1] that the burst is a short GRB, defined by the conventional T90 < 2 s boundary. This is a preliminary estimate intended for rapid kilonova-style follow-up triage and is superseded once a measured t90 is reported in a later notice."
+    },
+    "polarization_candidate": {
+      "type": "boolean",
+      "description": "True if COSI believes the burst is bright enough for a useful polarization measurement; false if it is not expected to support a useful polarization measurement."
+    }
+  }
+}

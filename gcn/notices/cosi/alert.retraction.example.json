@@ -1,0 +1,16 @@
+{
+  "$schema": "https://gcn.nasa.gov/schema/main/gcn/notices/cosi/alert.schema.json",
+  "alert_datetime": "2027-09-14T03:55:12.0Z",
+  "alert_tense": "current",
+  "alert_type": "retraction",
+  "mission": "COSI",
+  "instrument": "BGO Shields",
+  "messenger": "EM",
+  "record_number": 2,
+  "trigger_time": "2027-09-14T03:21:42.128Z",
+  "event_name": "GRB 270914A",
+  "id": ["270914141"],
+  "data_archive_page": "https://heasarc.gsfc.nasa.gov/cosi/trigger/270914141/",
+  "classification": { "GRB": 0.02, "Local Particles": 0.93, "Noise": 0.05 },
+  "additional_info": "Retraction of trigger 270914141. Ground analysis attributes the onboard trigger to a charged-particle event near the SAA; not of astrophysical origin. No follow-up warranted."
+}
