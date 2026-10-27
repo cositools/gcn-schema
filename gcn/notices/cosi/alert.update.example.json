@@ -28,8 +28,15 @@
     "Local Particles": 0.02
   },
   "prob_short": 0.08,
-  "ged_snr": 9.7,
-  "triggered_shields": [true, true, false, true, false, false],
+  "gct_snr": 9.7,
+  "detector_status": {
+    "ACS0": "triggered",
+    "ACS1": "triggered",
+    "ACS2": "on",
+    "ACS3": "triggered",
+    "ACS4": "on",
+    "ACS5": "on"
+  },
   "t90": 24.6,
   "t90_error": [1.2],
   "t50": 9.1,

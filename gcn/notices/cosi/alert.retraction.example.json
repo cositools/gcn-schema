@@ -4,7 +4,7 @@
   "alert_tense": "current",
   "alert_type": "retraction",
   "mission": "COSI",
-  "instrument": "BGO Shields",
+  "instrument": "ACS",
   "messenger": "EM",
   "record_number": 2,
   "trigger_time": "2027-09-14T03:21:42.128Z",

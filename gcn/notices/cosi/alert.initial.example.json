@@ -4,7 +4,7 @@
   "alert_tense": "current",
   "alert_type": "initial",
   "mission": "COSI",
-  "instrument": "BGO Shields",
+  "instrument": "ACS",
   "messenger": "EM",
   "record_number": 1,
   "trigger_time": "2027-09-14T03:21:42.128Z",
@@ -32,6 +32,13 @@
   "fluence_error": 0.8e-6,
   "fluence_spectral_band": [80, 2000],
   "fluence_time_range": [0.0, 1.024],
-  "ged_snr": 6.2,
-  "triggered_shields": [true, true, false, true, false, false]
+  "gct_snr": 6.2,
+  "detector_status": {
+    "ACS0": "triggered",
+    "ACS1": "triggered",
+    "ACS2": "on",
+    "ACS3": "triggered",
+    "ACS4": "on",
+    "ACS5": "on"
+  }
 }

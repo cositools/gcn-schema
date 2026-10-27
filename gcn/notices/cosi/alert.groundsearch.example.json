@@ -27,7 +27,7 @@
   "image_energy_range": [200, 2000],
   "classification": { "GRB": 0.9, "SGR": 0.05, "Local Particles": 0.05 },
   "prob_short": 0.62,
-  "ged_snr": 7.8,
+  "gct_snr": 7.8,
   "t90": 0.9,
   "t90_error": [0.2],
   "best_fit_model": "CutoffPowerLaw",
